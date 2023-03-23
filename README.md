@@ -7,6 +7,6 @@ LiveSplit autosplitter for Lycanthorn II - Rain of Beasts
 
 ## TODO
 - Auto split points
- - Key collection
- - Boss kills
- - Run end
+  - Key collection
+  - Boss kills
+  - Run end
