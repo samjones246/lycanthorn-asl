@@ -9,9 +9,9 @@ LiveSplit autosplitter for Lycanthorn II - Rain of Beasts
 
 ## TODO
 - Auto split points
- - Key collection
- - Boss kills
- - Run end
+  - Key collection
+  - Boss kills
+  - Run end
 
 ## Technical Info
 Lycanthorn II is built with GZDoom 4.3.1. This engine is open source, which is always helpful when reverse engineering an application. To find the static values outlined below, I used the following process:
