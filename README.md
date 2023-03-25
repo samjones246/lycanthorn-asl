@@ -1,5 +1,5 @@
 # lycanthorn-asl
-LiveSplit autosplitter for Lycanthorn II - Rain of Beasts
+LiveSplit autosplitter for [Lycanthorn II - Rain of Beasts](https://store.steampowered.com/app/1546440/Lycanthorn_II__Rain_of_Beasts/).
 
 ## Features
 - Load Removal
@@ -14,9 +14,9 @@ LiveSplit autosplitter for Lycanthorn II - Rain of Beasts
   - Run end
 
 ## Technical Info
-Lycanthorn II is built with GZDoom 4.3.1. This engine is open source, which is always helpful when reverse engineering an application. To find the static values outlined below, I used the following process:
+Lycanthorn II is built with [GZDoom 4.3.1](https://github.com/ZDoom/gzdoom/tree/g4.3.1). This engine is open source, which is always helpful when reverse engineering an application. To find the static values outlined below, I used the following process:
  - Locate a reference to the target value in the source code which is close to a unique string literal.
- - Using a reverse engineering tool such as x64dbg, search for the string literal in the game's exe.
+ - Using a reverse engineering tool such as [x64dbg](https://x64dbg.com), search for the string literal in the game's exe.
  - Locate the assembly instruction correspoinding to the reference to the target variable.
  - Either:
    - Copy the constant pointer used by the instruction and use it directly. This is the simpler option, but if the game updates the pointer will probably change.
