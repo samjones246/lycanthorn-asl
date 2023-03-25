@@ -5,7 +5,7 @@ LiveSplit autosplitter for [Lycanthorn II - Rain of Beasts](https://store.steamp
 - Load Removal
 - Auto start
 - Auto split points
-  - Assorted level entries/exits
+  - Level entries/exits
 
 ## TODO
 - Auto split points
@@ -56,6 +56,14 @@ The `nextlevel` static variable is defined by GZDoom in `g_level.cpp`. It has ty
 
 ### Map Names
 Below is a mapping from internal map names to descriptions of those maps:
- - `MAP02` - Overworld
- - `MAP13` - Castle
- - `MAP07` - Volcano
+- `MAP02` - Overworld
+- `MAP03` - Canyon
+- `MAP04` - Lighthouse
+- `MAP05` - Observatory
+- `MAP06` - Pyramid
+- `MAP07` - Volcano
+- `MAP08` - Swamp
+- `MAP09` - Fish
+- `MAP10` - Tundra
+- `MAP11` - Nosferatu's Castle
+- `MAP13` - Intro Castle

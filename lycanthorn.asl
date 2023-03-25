@@ -11,13 +11,24 @@ startup
 
     var Maps = new Dictionary<string, string>() {
         {"Overworld", "MAP02"},
-        {"Castle", "MAP13"},
-        {"Volcano", "MAP07"}
+        {"Canyon", "MAP03"},
+        {"Lighthouse", "MAP04"},
+        {"Observatory", "MAP05"},
+        {"Pyramid", "MAP06"},
+        {"Volcano", "MAP07"},
+        {"Swamp", "MAP08"},
+        {"Fish", "MAP09"},
+        {"Tundra", "MAP10"},
+        {"Nosferatu's Castle", "MAP11"},
+        {"Intro Castle", "MAP13"},
     };
 
     vars.TransitionSplits = new Dictionary<string, Tuple<string, string>>();
     var AddEntrySplit = (Action<String>) ((mapName) => {
-        var splitName = "split_enter_" + mapName.ToLower();
+        var splitName = "split_enter_" + mapName
+            .Replace("'", "")
+            .Replace(" ", "_")
+            .ToLower();
         settings.Add(splitName, true, mapName, "split_enter");
         vars.TransitionSplits.Add(splitName, new Tuple<String, String>(Maps["Overworld"], Maps[mapName]));
     });
@@ -30,11 +41,18 @@ startup
     // Settings
     settings.Add("split_exit", true, "Split on leave area");
     settings.Add("split_enter", true, "Split on enter area");
-
-    AddExitSplit("Castle");
-    AddExitSplit("Volcano");
-    
-    AddEntrySplit("Volcano");
+    foreach (var map in Maps.Keys)
+    {
+        if (map == "Overworld") {
+            continue;
+        }
+        if (map != "Intro Castle") {
+            AddEntrySplit(map);
+        }
+        if (map != "Nosferatu's Castle") {
+            AddExitSplit(map);
+        }
+    }
 }
 
 start
