@@ -51,20 +51,27 @@ enum gameaction_t : int
 
 The autosplitter uses this variable for auto start functionality by checking when the value is `ga_newgame` (2).
 
-### nextlevel
-The `nextlevel` static variable is defined by GZDoom in `g_level.cpp`. It has type `FString`, a string wrapper. When loading a new level, the variable is updated with the name of the level to load. The autosplitter uses this variable for transition splits.
+### level.levelnum
+The `level` global variable is defined by GZDoom in `g_level.cpp`. It has type `FLevelLocals`, a struct which stores information about the active level. `FLevelLocals` is defined in `g_levellocals.h`. This is a large struct with many properties, but the one used for the autosplitter is `levelnum` (offset `0x940`). This is a numeric identifer for the current level, which is used by the autosplitter to tell when the player has moved to another level.
 
-### Map Names
-Below is a mapping from internal map names to descriptions of those maps:
-- `MAP02` - Overworld
-- `MAP03` - Canyon
-- `MAP04` - Lighthouse
-- `MAP05` - Observatory
-- `MAP06` - Pyramid
-- `MAP07` - Volcano
-- `MAP08` - Swamp
-- `MAP09` - Fish
-- `MAP10` - Tundra
-- `MAP11` - Nosferatu's Castle
-- `MAP12` - End Cutscene
-- `MAP13` - Intro Castle
+### nextlevel
+*NOTE: The autosplitter no longer uses this variable, since `level.levelnum` fits the use case better.*
+
+The `nextlevel` static variable is defined by GZDoom in `g_level.cpp`. It has type `FString`, a string wrapper. When loading a new level, the variable is updated with the name of the level to load. However, the variable is not updated when loading a save game. The autosplitter uses this variable for transition splits.
+
+### Map Names/Numbers
+Below is a mapping from internal map names/numbers to descriptions of those maps:
+- `TITLE` / 0 - Title Screen
+- `Map01` / 1 - Intro Cutscene
+- `MAP02` / 2 - Overworld
+- `MAP03` / 3 - Canyon
+- `MAP04` / 4 - Lighthouse
+- `MAP05` / 5 - Observatory
+- `MAP06` / 6 - Pyramid
+- `MAP07` / 7 - Volcano
+- `MAP08` / 8 - Swamp
+- `MAP09` / 9 - Fish
+- `MAP10` / 10 - Tundra
+- `MAP11` / 11 - Nosferatu's Castle
+- `MAP12` / 12 - End Cutscene
+- `MAP13` / 13 - Intro Castle
