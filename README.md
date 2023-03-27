@@ -6,12 +6,12 @@ LiveSplit autosplitter for [Lycanthorn II - Rain of Beasts](https://store.steamp
 - Auto start
 - Auto split points
   - Level entries/exits
+  - Run end
 
 ## TODO
 - Auto split points
   - Key collection
   - Boss kills
-  - Run end
 
 ## Technical Info
 Lycanthorn II is built with [GZDoom 4.3.1](https://github.com/ZDoom/gzdoom/tree/g4.3.1). This engine is open source, which is always helpful when reverse engineering an application. To find the static values outlined below, I used the following process:
@@ -66,4 +66,5 @@ Below is a mapping from internal map names to descriptions of those maps:
 - `MAP09` - Fish
 - `MAP10` - Tundra
 - `MAP11` - Nosferatu's Castle
+- `MAP12` - End Cutscene
 - `MAP13` - Intro Castle

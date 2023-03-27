@@ -63,6 +63,10 @@ start
 split
 {
     if (current.nextlevel != old.nextlevel) {
+        if (current.nextlevel == "MAP12") {
+            return true;
+        }
+
         foreach(var entry in vars.TransitionSplits) {
             var mFrom = entry.Value.Item1;
             var mTo = entry.Value.Item2;
